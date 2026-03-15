@@ -4,7 +4,7 @@ import {appConstants} from "../constants/constants";
 
 export const login =(user :{username:string,password:string}) =>{
     //console.log()
-    const loginPromise = axios.post("http://localhost:8080/login",
+    const loginPromise = axios.post("https://interviewdemo-backend.onrender.com/login",
         qs.stringify(user),
         {withCredentials:true}
     );
@@ -16,7 +16,7 @@ export const login =(user :{username:string,password:string}) =>{
 export const logout =() =>{
     //console.log()
     localStorage.clear();
-    const logoutPromise = axios.get("http://localhost:8080/logout",
+    const logoutPromise = axios.get("https://interviewdemo-backend.onrender.com/logout",
         {withCredentials:true}
     );
     return {
@@ -28,7 +28,7 @@ export const logout =() =>{
 export const register =(user:any) =>{
     //console.log()
     localStorage.clear();
-    const logoutPromise = axios.get("http://localhost:8080/register",user
+    const logoutPromise = axios.get("https://interviewdemo-backend.onrender.com/register",user
     );
     return {
         type: appConstants.LOGOUT,
